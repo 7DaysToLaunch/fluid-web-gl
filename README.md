@@ -1,4 +1,4 @@
-# framer-fluid-effect
+# fluid-web-gl
 
 A configurable WebGL fluid background built with [webgl-fluid-enhanced](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced) — the same engine used by Framer's Fluid Animation component.
 
