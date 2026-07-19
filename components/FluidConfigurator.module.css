@@ -1,0 +1,152 @@
+.panel {
+  width: 100%;
+  max-width: 960px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  pointer-events: auto;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.panelTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.resetButton {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #d4d4d4;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.resetButton:hover {
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #ffffff;
+}
+
+.section + .section {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sectionTitle {
+  margin-bottom: 14px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #737373;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.label {
+  font-size: 0.875rem;
+  color: #d4d4d4;
+}
+
+.colorInput {
+  width: 44px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.paletteGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.paletteField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.toggleGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 16px;
+}
+
+.toggleField {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: #d4d4d4;
+  cursor: pointer;
+}
+
+.toggleField input {
+  accent-color: #9470ff;
+}
+
+.sliderList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sliderField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sliderHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.value {
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+  color: #a3a3a3;
+}
+
+.sliderField input[type="range"] {
+  width: 100%;
+  accent-color: #9470ff;
+}
+
+@media (max-width: 720px) {
+  .paletteGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .toggleGrid {
+    grid-template-columns: 1fr;
+  }
+}
