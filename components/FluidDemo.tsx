@@ -3,8 +3,7 @@
 import { useState } from "react";
 import FluidBackground from "@/components/FluidBackground";
 import FluidConfigurator from "@/components/FluidConfigurator";
-import CopyButtons from "@/components/CopyButtons";
-import FramerInstructions from "@/components/FramerInstructions";
+import HeaderActions from "@/components/HeaderActions";
 import {
   cloneFluidConfig,
   defaultFluidConfig,
@@ -17,24 +16,26 @@ export default function FluidDemo() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <div className={styles.titleRow}>
+        <div className={styles.titleGroup}>
           <h1 className={styles.title}>Fluid Animation</h1>
           <span className={styles.badge}>Free</span>
+        </div>
+        <div className={styles.headerActions}>
+          <HeaderActions config={config} />
         </div>
         <p className={styles.description}>
           A WebGL fluid animation component that solves the
           Navier-Stokes equations for incompressible flow. Hover over the
-          preview to inject light and swirl the fluid, then tune the look below.
+          preview to inject light and swirl the fluid, then tune the look on the
+          left.
         </p>
-        <CopyButtons config={config} />
-        <FramerInstructions />
       </header>
 
       <div className={styles.demoGrid}>
+        <FluidConfigurator config={config} onChange={setConfig} />
         <div className={styles.preview}>
           <FluidBackground config={config} />
         </div>
-        <FluidConfigurator config={config} onChange={setConfig} />
       </div>
     </div>
   );

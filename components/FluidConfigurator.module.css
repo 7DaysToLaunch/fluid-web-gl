@@ -1,11 +1,14 @@
 .panel {
   width: 100%;
-  max-width: 960px;
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.03);
   padding: 20px;
   pointer-events: auto;
+  box-sizing: border-box;
 }
 
 .panelHeader {
@@ -139,6 +142,14 @@
 .sliderField input[type="range"] {
   width: 100%;
   accent-color: #9470ff;
+}
+
+@media (max-width: 900px) {
+  .panel {
+    height: auto;
+    min-height: var(--demo-height);
+    max-height: none;
+  }
 }
 
 @media (max-width: 720px) {

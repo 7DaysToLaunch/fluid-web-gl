@@ -1,5 +1,7 @@
 # fluid-web-gl
 
+Live demo: **[smokey-five.vercel.app](https://smokey-five.vercel.app)** · Repo: **[github.com/7DaysToLaunch/fluid-web-gl](https://github.com/7DaysToLaunch/fluid-web-gl)**
+
 A configurable WebGL fluid background built with [webgl-fluid-enhanced](https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced) — the same engine used by Framer's Fluid Animation component.
 
 Tune colors, splat strength, bloom, and more in the live configurator, then copy the snippet for React or Framer.
