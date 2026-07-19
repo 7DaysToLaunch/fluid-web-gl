@@ -22,7 +22,7 @@ export default function FluidDemo() {
           <span className={styles.badge}>Free</span>
         </div>
         <p className={styles.description}>
-          A WebGL fluid animation component that iteratively solves the
+          A WebGL fluid animation component that solves the
           Navier-Stokes equations for incompressible flow. Hover over the
           preview to inject light and swirl the fluid, then tune the look below.
         </p>
