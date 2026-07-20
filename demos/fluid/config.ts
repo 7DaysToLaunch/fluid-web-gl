@@ -1,3 +1,5 @@
+export const INITIAL_SPLATS = 5;
+
 export const defaultFluidConfig = {
   backgroundColor: "#121212",
   hover: true,
@@ -38,3 +40,15 @@ export function cloneFluidConfig(config: FluidConfig): FluidConfig {
     colorPalette: config.colorPalette ? [...config.colorPalette] : undefined,
   };
 }
+
+/** Default config tuned for shareable recordings */
+export const viralFluidConfig: FluidConfig = {
+  backgroundColor: "#050505",
+  colorPalette: ["#0a0a0a", "#120033", "#00d4ff", "#ff00aa", "#ffe600"],
+  curl: 42,
+  splatForce: 8500,
+  bloomIntensity: 1,
+  bloomThreshold: 0.45,
+  sunraysWeight: 0.85,
+  colorUpdateSpeed: 18,
+};

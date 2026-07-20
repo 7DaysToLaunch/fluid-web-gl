@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import styles from "./FramerInstructions.module.css";
 
 type FramerInstructionsProps = {
@@ -57,55 +58,58 @@ export default function FramerInstructions({
         Framer guide
       </button>
 
-      {open ? (
-        <div className={styles.overlay} onClick={close} role="presentation">
-          <div
-            className={styles.modal}
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="framer-instructions-title"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div className={styles.modalHeader}>
-              <h2 id="framer-instructions-title" className={styles.modalTitle}>
-                How to add to Framer
-              </h2>
-              <button
-                type="button"
-                className={styles.closeButton}
-                onClick={close}
-                aria-label="Close"
+      {open
+        ? createPortal(
+            <div className={styles.overlay} onClick={close} role="presentation">
+              <div
+                className={`${styles.modal} brandScroll`}
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="framer-instructions-title"
+                onClick={(event) => event.stopPropagation()}
               >
-                ×
-              </button>
-            </div>
+                <div className={styles.modalHeader}>
+                  <h2 id="framer-instructions-title" className={styles.modalTitle}>
+                    How to add to Framer
+                  </h2>
+                  <button
+                    type="button"
+                    className={styles.closeButton}
+                    onClick={close}
+                    aria-label="Close"
+                  >
+                    ×
+                  </button>
+                </div>
 
-            <ol className={styles.list}>
-              <li>
-                Tune the fluid in the configurator, then click{" "}
-                <strong>Copy for Framer</strong>.
-              </li>
-              <li>
-                In Framer, open <strong>Assets → Code</strong> and create a new
-                Code Component.
-              </li>
-              <li>Paste the copied code into the component file.</li>
-              <li>
-                When Framer prompts for dependencies, install{" "}
-                <code>webgl-fluid-enhanced</code>.
-              </li>
-              <li>
-                Drag the component onto your canvas and set its width and height
-                to fill the frame or section you want.
-              </li>
-              <li>
-                Preview the site and move your cursor over the component to see
-                the hover swirl.
-              </li>
-            </ol>
-          </div>
-        </div>
-      ) : null}
+                <ol className={styles.list}>
+                  <li>
+                    Tune the fluid in the configurator, then click{" "}
+                    <strong>Copy for Framer</strong>.
+                  </li>
+                  <li>
+                    In Framer, open <strong>Assets → Code</strong> and create a new
+                    Code Component.
+                  </li>
+                  <li>Paste the copied code into the component file.</li>
+                  <li>
+                    When Framer prompts for dependencies, install{" "}
+                    <code>webgl-fluid-enhanced</code>.
+                  </li>
+                  <li>
+                    Drag the component onto your canvas and set its width and height
+                    to fill the frame or section you want.
+                  </li>
+                  <li>
+                    Preview the site and move your cursor over the component to see
+                    the hover swirl.
+                  </li>
+                </ol>
+              </div>
+            </div>,
+            document.body,
+          )
+        : null}
     </>
   );
 }

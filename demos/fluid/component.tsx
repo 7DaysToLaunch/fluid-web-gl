@@ -1,15 +1,12 @@
 "use client";
 
-/**
- * WebGL fluid background powered by webgl-fluid-enhanced.
- *
- * Framer: paste lib/framerExport.ts into a Code Component and add
- * webgl-fluid-enhanced as a dependency in your Framer project settings.
- */
 import { useEffect, useRef } from "react";
 import WebGLFluidEnhanced from "webgl-fluid-enhanced";
-import { INITIAL_SPLATS, type FluidConfig } from "@/lib/fluidConfig";
-import { defaultFluidConfig } from "@/lib/defaultFluidConfig";
+import {
+  defaultFluidConfig,
+  INITIAL_SPLATS,
+  type FluidConfig,
+} from "@/demos/fluid/config";
 
 type FluidBackgroundProps = {
   className?: string;

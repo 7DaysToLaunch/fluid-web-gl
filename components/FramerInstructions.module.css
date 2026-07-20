@@ -6,12 +6,12 @@
 
 .triggerButton {
   appearance: none;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--color-border);
   border-radius: 999px;
   padding: 12px 24px;
   font-size: 0.9375rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--color-text);
   background: transparent;
   cursor: pointer;
   transition:
@@ -20,20 +20,21 @@
 }
 
 .triggerButton:hover {
-  border-color: rgba(255, 255, 255, 0.35);
-  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--color-border-strong);
+  background: var(--color-bg-hover);
 }
 
 .overlay {
   position: fixed;
   inset: 0;
-  z-index: 100;
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background: rgba(0, 0, 0, 0.72);
-  backdrop-filter: blur(6px);
+  background: var(--color-overlay);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   pointer-events: auto;
 }
 
@@ -42,10 +43,10 @@
   max-width: 520px;
   max-height: calc(100vh - 48px);
   overflow-y: auto;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--color-border);
   border-radius: 16px;
-  background: #111111;
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+  background: var(--color-modal-bg);
+  box-shadow: 0 24px 64px var(--color-modal-shadow);
 }
 
 .modalHeader {
@@ -59,7 +60,7 @@
 .modalTitle {
   font-size: 1.125rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--color-text);
 }
 
 .closeButton {
@@ -70,7 +71,7 @@
   border-radius: 8px;
   font-size: 1.5rem;
   line-height: 1;
-  color: #a3a3a3;
+  color: var(--color-text-secondary);
   background: transparent;
   cursor: pointer;
   transition:
@@ -79,8 +80,8 @@
 }
 
 .closeButton:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-text);
+  background: var(--color-bg-hover);
 }
 
 .list {
@@ -88,7 +89,7 @@
   padding: 16px 20px 24px 36px;
   font-size: 0.9375rem;
   line-height: 1.6;
-  color: #a3a3a3;
+  color: var(--color-text-secondary);
 }
 
 .list li + li {
@@ -98,10 +99,10 @@
 .list code {
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.8125rem;
-  color: #e5e5e5;
+  color: var(--color-text-label);
 }
 
 .list strong {
-  color: #d4d4d4;
+  color: var(--color-text-label);
   font-weight: 600;
 }

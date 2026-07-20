@@ -4,7 +4,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 20px 24px 40px;
+  padding: 20px 24px 112px;
   pointer-events: none;
   --demo-height: max(580px, calc(100vh - 230px));
 }
@@ -13,27 +13,26 @@
   width: 100%;
   max-width: 1600px;
   margin: 0 auto 12px;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  grid-template-rows: auto auto;
-  column-gap: 24px;
-  row-gap: 12px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .titleGroup {
-  grid-column: 1;
-  grid-row: 1;
   display: flex;
   align-items: center;
   gap: 12px;
   min-width: 0;
 }
 
-.headerActions {
-  grid-column: 2;
-  grid-row: 1 / -1;
-  align-self: end;
+.copyDock {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 20;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100vw - 32px);
   pointer-events: auto;
 }
 
@@ -41,24 +40,22 @@
   margin: 0;
   font-size: 2.5rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--color-text);
   letter-spacing: -0.02em;
 }
 
 .badge {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #22c55e;
+  color: var(--color-success);
 }
 
 .description {
-  grid-column: 1;
-  grid-row: 2;
   margin: 0 0 16px;
   max-width: 720px;
   font-size: 1rem;
   line-height: 1.5;
-  color: #a3a3a3;
+  color: var(--color-text-secondary);
 }
 
 .demoGrid {
@@ -76,35 +73,17 @@
   width: 100%;
   height: 100%;
   min-height: 0;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--color-border);
   border-radius: 16px;
   overflow: hidden;
-  background: #121212;
+  background: var(--color-preview-bg);
   pointer-events: auto;
 }
 
 @media (max-width: 900px) {
   .page {
     --demo-height: max(400px, calc(100vh - 340px));
-  }
-
-  .header {
-    grid-template-columns: 1fr;
-    row-gap: 12px;
-  }
-
-  .titleGroup {
-    grid-row: 1;
-  }
-
-  .headerActions {
-    grid-column: 1;
-    grid-row: 2;
-    align-self: start;
-  }
-
-  .description {
-    grid-row: 3;
+    padding-bottom: 128px;
   }
 
   .demoGrid {
@@ -115,18 +94,26 @@
   .preview {
     order: -1;
   }
+
+  .copyDock {
+    width: calc(100vw - 24px);
+    max-width: none;
+    bottom: 16px;
+  }
 }
 
 @media (max-width: 640px) {
   .page {
     --demo-height: max(320px, calc(100vh - 380px));
+    padding: 16px 16px 140px;
   }
 
   .title {
     font-size: 1.75rem;
   }
 
-  .page {
-    padding: 16px 16px 32px;
+  .copyDock {
+    width: calc(100vw - 16px);
+    bottom: 12px;
   }
 }
